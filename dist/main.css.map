@@ -1,0 +1,1 @@
+{"version":3,"file":"main.css","mappings":"AAAA;IACI,WAAW;IACX,sBAAsB;IACtB,WAAW;AACf,C","sources":["webpack://gsoc-chromium/./src/styles/index.css"],"sourcesContent":["body {\n    margin: 0px;\n    background-color: #333;\n    color: #222;\n}"],"names":[],"sourceRoot":""}

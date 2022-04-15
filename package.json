@@ -1,0 +1,30 @@
+{
+  "name": "gsoc-chromium",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack serve",
+    "test": "jest",
+    "build": "NODE_ENV=production webpack",
+    "build-dev": "webpack --watch"
+  },
+  "keywords": [],
+  "author": "Haroon Mohamedali",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.17.8",
+    "@babel/preset-env": "^7.16.11",
+    "babel-loader": "^8.2.4",
+    "css-loader": "^6.7.1",
+    "mini-css-extract-plugin": "^2.6.0",
+    "webpack": "^5.71.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.8.0"
+  },
+  "dependencies": {
+    "firebase": "^9.6.10",
+    "regenerator-runtime": "^0.13.9",
+    "uuid": "^8.3.2"
+  }
+}
