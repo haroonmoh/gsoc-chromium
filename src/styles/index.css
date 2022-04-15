@@ -195,3 +195,7 @@ body {
     text-align: right;
     padding: 10px;
 }
+.error-message {
+    color: red;
+    display: none;
+}

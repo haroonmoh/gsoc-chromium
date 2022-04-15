@@ -19,8 +19,11 @@ if (window.location.href.indexOf('add') != -1) {
         if ($(e.target).hasClass('remove-aggregator') == false) {
             let id = $(this).data('id');
             let infoId = '#' + id + '-info';
+            // toggle the info section filled with the text fields
             $(infoId).toggle();
+            // update the arrow at the end
             $('#' + id + '-header i:last-of-type').html($('#' + id + ' i:last-of-type').html() == 'keyboard_arrow_down' ? 'keyboard_arrow_up' : 'keyboard_arrow_down');
+            // remove or add active-level which changes the color
             $(this).toggleClass('active-level');
         }
     });
@@ -99,8 +102,11 @@ if (window.location.href.indexOf('add') != -1) {
     });
 
     // when remove aggregator is clicked remove the level and rename the other levels
+    // this is not finished. I need to update the value attribute so that when
+    // i update the html it doesn't remove the previous value
     $('.levels').on('click', '.remove-aggregator', function (e) {
         let id = $(this).data('id');
+        // split the id to get the aggregator number and the level number
         let removeValues = id.split("-")
         let aggregatorNumber = removeValues[1];
         let levelNumber = removeValues[3];
@@ -118,8 +124,11 @@ if (window.location.href.indexOf('add') != -1) {
         for (let i = levelNumber; i < currentLevel + 1; i++) {
             let html = $('#aggregator-' + aggregatorNumber + '-level-' + i).html();
             if (html != null) {
+                // replace the html with the new level number
                 $('#aggregator-' + aggregatorNumber + '-level-' + i).html(html.replaceAll('aggregator-' + aggregatorNumber + '-level-' + i, 'aggregator-' + aggregatorNumber + '-level-' + (i - 1)));
+                // change the span to show the new level number
                 $('#aggregator-' + aggregatorNumber + '-level-' + (i - 1) + '-header span').html('Level ' + (i - 1));
+                // update the containers id as well
                 $('#aggregator-' + aggregatorNumber + '-level-' + i).attr('id', 'aggregator-' + aggregatorNumber + '-level-' + (i - 1));
             }
         }
@@ -142,6 +151,7 @@ if (window.location.href.indexOf('add') != -1) {
         window.location.href = '/';
     });
 
+    // when the level header is clicked show or hide the text fields
     $('.levels').on('click', '.level-header', function (e) {
         let id = $(this).data('id');
         let infoId = '#' + id + '-info';
@@ -184,26 +194,34 @@ if (window.location.href.indexOf('add') != -1) {
         $('.page-content').css('display', 'flex')
         $('.filter-side-holder').toggle()
     });
+
+    // created and updated cant be true at the same time
     $('#created').change(function () {
         if ($(this).val() != "" && $('#updated').val() != "") {
             // error bc firebase cant do two range sorts
-            $(this).addClass('mdl-textfield__error')
-            $('#updated').addClass('mdl-textfield__error')
+            $(this).parent().addClass('is-invalid')
+            $('#updated').parent().addClass('is-invalid')
+            $('#updated-created-error').show()
         } else {
             // good
-            $(this).removeClass('mdl-textfield__error')
-            $('#updated').removeClass('mdl-textfield__error')
+            $(this).parent().removeClass('is-invalid')
+            $('#updated').parent().removeClass('is-invalid')
+            $('#updated-created-error').hide()
         }
     })
+
+    // created and updated can't be true at the same time
     $('#updated').change(function () {
         if ($(this).val() != "" && $('#created').val() != "") {
             // error bc firebase cant do two range sorts
-            $(this).addClass('mdl-textfield__error')
-            $('#created').addClass('mdl-textfield__error')
+            $(this).parent().addClass('is-invalid')
+            $('#created').parent().addClass('is-invalid')
+            $('#updated-created-error').show()
         } else {
             // good
-            $(this).removeClass('mdl-textfield__error')
-            $('#created').removeClass('mdl-textfield__error')
+            $(this).parent().removeClass('is-invalid')
+            $('#created').parent().removeClass('is-invalid')
+            $('#updated-created-error').hide()
         }
     })
     $('#filter-jobs-button').click(function () {

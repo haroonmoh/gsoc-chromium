@@ -7,7 +7,8 @@
     "start": "webpack serve",
     "test": "jest",
     "build": "NODE_ENV=production webpack",
-    "build-dev": "webpack --watch"
+    "build-dev": "webpack --watch",
+    "deploy": "npm run build && firebase deploy"
   },
   "keywords": [],
   "author": "Haroon Mohamedali",

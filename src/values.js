@@ -1,3 +1,5 @@
+// ALL THE VALUES THAT ARE COMMONLY USED THROUGHOUT THE FILES
+
 export default {
     currentLevelsOne: 0,
     currentLevelsTwo: 0,
