@@ -1,1 +1,1 @@
-# gsoc-chromium
+# Haroon's GSOC Chromium Application Code
