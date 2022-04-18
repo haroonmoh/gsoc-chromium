@@ -29,8 +29,5 @@ This is the starter code that I have written in the past week.
 
 For "npm run deploy", make sure to set up firebase hosting for your project.
 
-## GSOC Proposal Paper
-[My Proposal](https://docs.google.com/document/d/13Wv7RVTXYJOtsTLPx57q5FGDzfcjxKBGtkXwVz6wjuw/edit?usp=sharing "My Proposal")
-
 ## Example app
 [My Website](http://jobs-aggregation.web.app "Jobs Aggregation")
