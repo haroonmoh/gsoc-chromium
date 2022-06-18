@@ -7,13 +7,12 @@ import VALUES from "./values";
 import regeneratorRuntime from "regenerator-runtime";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCyJ0vJxbxKVRHM5oLbxXWf2agCgFj0Xwk",
-    authDomain: "jobs-aggregation.firebaseapp.com",
-    projectId: "jobs-aggregation",
-    storageBucket: "jobs-aggregation.appspot.com",
-    messagingSenderId: "636896846940",
-    appId: "1:636896846940:web:db0cb2ffed9452b432b299",
-    measurementId: "G-S67S9Y9JF3"
+    apiKey: "AIzaSyB3PnhacstRYpPwnfk1IiOZXjbCe96i_7A",
+    authDomain: "privacyaggregate-gsoc.firebaseapp.com",
+    projectId: "privacyaggregate-gsoc",
+    storageBucket: "privacyaggregate-gsoc.appspot.com",
+    messagingSenderId: "985023793719",
+    appId: "1:985023793719:web:8b35372118aa53cd230db2"
 };
 
 // Initialize Firebase (Firestore and Analytics)
